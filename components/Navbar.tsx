@@ -1,5 +1,4 @@
 import React from 'react';
-import 'https://www.w3schools.com/w3css/4/w3.css'
 
 const Navbar: React.FC = () => {
   return (
@@ -13,10 +12,6 @@ const Navbar: React.FC = () => {
             <li className="text-white">Services</li>
             <li className="text-white">Contact</li>
           </ul>
-          <i className="fa fa-home"></i>
-            <i className="fa fa-search"></i>
-            <i className="fa fa-cloud"></i>
-            <i className="fa fa-trash"></i>
         </div>
       </div>
     </nav>
