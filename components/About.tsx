@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
@@ -7,17 +8,19 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2">
             <div className="image-container">
-              <img
-                className="max-h-700 rounded-lg shadow-lg"
-                src="about.jpg"
+              <Image
+                src="/about.jpg" // Replace with the correct path to your image
                 alt="Our Team"
+                width={700} // Adjust the width as needed
+                height={475} // Adjust the height as needed
+                className="rounded-lg shadow-lg"
               />
             </div>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
             <div className="text-container">
               <h2 className="text-4xl font-semibold mb-4">O NAMA</h2>
-              <p className="text-gray-700 leading-relaxed text-center">
+              <p className="text-gray-700 leading-relaxed">
                 Sa jasnom i kvalitetnom vizijom naše poduzeće usposobljeno je za
                 izvedbu i izvršavanje svih građevinskih radova te izgradnju
                 obiteljskih kuća te drugih objekata. Na području Rovinja te cijele Istarske županije izvršavamo sve
@@ -27,7 +30,7 @@ const About: React.FC = () => {
                 Zidarski radovi, krovopokrivački radovi te svi završni građevinski
                 radovi biti će izvršeni od strane eksperta sa mnoštvom iskustva.
               </p>
-              <ul className="list-disc list-inside mt-4 text-center">
+              <ul className="list-disc list-inside mt-4">
                 <li className="text-gray-700">
                   Za izvedbu naših radova koristimo samo najkvalitetnije materijale
                   te najsuvremeniju mehanizaciju, koja nam omogućava izvedbu svih
