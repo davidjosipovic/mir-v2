@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Import Image from next/image
 
 interface LightboxProps {
   imageUrl: string;
@@ -9,6 +10,14 @@ const Lightbox: React.FC<LightboxProps> = ({ imageUrl, onClose }) => {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-80">
       <div className="max-w-full max-h-full">
+        <Image
+          src={imageUrl}
+          alt="Enlarged Image"
+          layout="responsive"
+          width={500} // Adjust the width as needed
+          height={500} // Adjust the height as needed
+          className="w-auto h-auto max-w-full max-h-full rounded-lg"
+        />
         <button
           className="absolute top-2 right-2 p-2 text-white rounded-full bg-gray-600 hover:bg-gray-800 focus:outline-none"
           onClick={onClose}
@@ -28,12 +37,6 @@ const Lightbox: React.FC<LightboxProps> = ({ imageUrl, onClose }) => {
             />
           </svg>
         </button>
-        <img
-          className="cursor-pointer w-3/2 h-auto max-w-screen-lg max-h-screen rounded-lg mx-auto my-auto"
-          src={imageUrl}
-          alt="Enlarged Image"
-          onClick={(e) => e.stopPropagation()}
-        />
       </div>
     </div>
   );

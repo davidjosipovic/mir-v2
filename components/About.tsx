@@ -25,7 +25,7 @@ const About: React.FC = () => {
                 izvedbu i izvršavanje svih građevinskih radova te izgradnju
                 obiteljskih kuća te drugih objekata. Na području Rovinja te cijele Istarske županije izvršavamo sve
                 potrebne građevinske projekte povezane sa građevinskim radovima po
-                principu "ključ u ruke". Unutar spektra tih radova opremiti ćemo
+                principu &quot;ključ u ruke&quot;. Unutar spektra tih radova opremiti ćemo
                 cijelu vašu kuću, stan ili neki drugi objekt od temelja pa do krova.
                 Zidarski radovi, krovopokrivački radovi te svi završni građevinski
                 radovi biti će izvršeni od strane eksperta sa mnoštvom iskustva.
