@@ -1,6 +1,7 @@
     'use client'
     import React, { useState } from 'react';
     import Lightbox from './Lightbox'; // Import the Lightbox component
+    import Image from 'next/image';
 
 
     interface GalleryProps {
@@ -54,10 +55,12 @@
                 onClick={() => openLightbox(image.imageUrl)} // Open the lightbox when the image is clicked
             >
                 <div className="h-64 max-w-full">
-                <img
+                <Image
                     className="w-full h-full rounded-lg cursor-pointer"
                     src={image.imageUrl}
                     alt={`Image ${index + 1}`}
+                    width={700}
+                    height={700}
                 />
                 </div>
             </div>
