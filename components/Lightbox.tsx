@@ -9,13 +9,13 @@ interface LightboxProps {
 const Lightbox: React.FC<LightboxProps> = ({ imageUrl, onClose }) => {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-80">
-      <div className="max-w-full max-h-full">
+      <div className="  w-6/12">
         <Image
           src={imageUrl}
           alt="Enlarged Image"
           layout="responsive"
-          width={500} // Adjust the width as needed
-          height={500} // Adjust the height as needed
+          width={700} // Adjust the width as needed
+          height={700} // Adjust the height as needed
           className="w-auto h-auto max-w-full max-h-full rounded-lg"
         />
         <button
