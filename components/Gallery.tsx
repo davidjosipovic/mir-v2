@@ -12,14 +12,14 @@
     }
 
     const Gallery: React.FC<GalleryProps> = ({ images }) => {
-    const [currentCategory, setCurrentCategory] = useState('All categories');
+    const [currentCategory, setCurrentCategory] = useState('POKAŽI SVE');
     const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-    const filteredImages = currentCategory === 'All categories'
+    const filteredImages = currentCategory === 'POKAŽI SVE'
         ? images
         : images.filter(image => image.category === currentCategory);
 
-    const categories = ['All categories', ...Array.from(new Set(images.map(image => image.category)))];
+    const categories = ['POKAŽI SVE', ...Array.from(new Set(images.map(image => image.category)))];
 
     const openLightbox = (imageUrl: string) => {
         setLightboxImage(imageUrl);
