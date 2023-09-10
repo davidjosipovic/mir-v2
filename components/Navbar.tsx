@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,24 +22,40 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const navbarClasses = `bg-blue-500 p- fixed right-0 left-0 transition-all duration-300 ${
+  const navbarClasses = `bg-blue-500 p-2 fixed right-0 left-0 transition-all duration-300 ${
     scrolled ? 'bg-opacity-100' : 'bg-opacity-0'
-  } z-10`; // Added z-10 to set a higher z-index
+  } z-10`;
 
-  const textMarginClasses = `${scrolled ? 'my-1' : 'mt-10'} transition-all duration-300`;
+  const menuButtonClasses = 'lg:hidden cursor-pointer text-white text-2xl';
+  const menuClasses = `${menuOpen ? 'block' : 'hidden'} lg:block lg:flex text-lg lg:text-xl space-x-4 font-bold mt-4 lg:mt-0`;
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const textMarginClasses = `mt-10 lg:mt-0 transition-all duration-300 ${
+    menuOpen ? 'lg:my-1' : ''
+  }`;
 
   return (
     <nav className={navbarClasses}>
-      <div className="flex justify-between items-center mx-28 my-8 z-20"> {/* Added z-20 to set a higher z-index */}
-        <div className="text-white text-2xl font-bold">MIR</div>
-        <ul className={`flex text-l space-x-4 font-bold ${textMarginClasses}`}>
-          <li className="text-white">POČETNA</li>
-          <li className="text-white">OPĆENITO</li>
-          <li className="text-white">USLUGE</li>
-          <li className="text-white">PROJEKTI</li>
-          <li className="text-white">O NAMA</li>
-          <li className="text-white">KONTAKT</li>
-        </ul>
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center my-4 lg:my-8">
+          <div className="text-white text-2xl lg:text-4xl font-bold">MIR</div>
+          <div className="lg:hidden">
+            <button onClick={toggleMenu} className={menuButtonClasses}>
+              &#9776; {/* Hamburger icon */}
+            </button>
+          </div>
+          <ul className={menuClasses}>
+            <li className={`text-white ${textMarginClasses}`}>POČETNA</li>
+            <li className={`text-white ${textMarginClasses}`}>OPĆENITO</li>
+            <li className={`text-white ${textMarginClasses}`}>USLUGE</li>
+            <li className={`text-white ${textMarginClasses}`}>PROJEKTI</li>
+            <li className={`text-white ${textMarginClasses}`}>O NAMA</li>
+            <li className={`text-white ${textMarginClasses}`}>KONTAKT</li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
