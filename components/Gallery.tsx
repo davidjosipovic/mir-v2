@@ -47,16 +47,16 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {filteredImages.map((image, index) => (
             <div
               key={index}
               className="flex justify-center items-center transition duration-300 transform hover:scale-105"
               onClick={() => openLightbox(image.imageUrl)} // Open the lightbox when the image is clicked
             >
-              <div className="w-full h-64 max-w-full">
+              <div className="w-full  h-64 sm:h-48 md:h-48 lg:h-64 max-w-full">
                 <Image
-                  className="w-full h-full rounded-lg cursor-pointer"
+                  className="w-full h-full cursor-pointer"
                   src={image.imageUrl}
                   alt={`Image ${index + 1}`}
                   width={800}

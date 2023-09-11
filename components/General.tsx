@@ -26,7 +26,7 @@ const General: React.FC = () => {
         key={index}
         width={500}
         height={200}
-        className={`mySlides w-full ${index === currentImageIndex ? 'block' : 'hidden'}`}
+        className={`rounded-lg mySlides w-full ${index === currentImageIndex ? 'block' : 'hidden'}`}
         src={src}
         alt={`Slide ${index + 1}`}
       />

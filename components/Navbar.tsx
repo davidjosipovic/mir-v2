@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showGoTopButton, setShowGoTopButton] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +12,12 @@ const Navbar: React.FC = () => {
         setScrolled(true);
       } else {
         setScrolled(false);
+      }
+
+      if (window.scrollY > 100) {
+        setShowGoTopButton(true);
+      } else {
+        setShowGoTopButton(false);
       }
     };
 
@@ -26,7 +33,11 @@ const Navbar: React.FC = () => {
     scrolled ? 'bg-opacity-100' : 'bg-opacity-0'
   } z-10`;
 
-  const menuButtonClasses = 'lg:hidden cursor-pointer text-white text-2xl';
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const menuButtonClasses = 'lg:hidden cursor-pointer text-white text-3xl';
   const menuClasses = `${menuOpen ? 'block' : 'hidden'} lg:block lg:flex text-lg lg:text-xl space-x-4 font-bold mt-4 lg:mt-0`;
 
   const toggleMenu = () => {
@@ -40,7 +51,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={navbarClasses}>
       <div className="container mx-auto">
-        <div className="flex justify-between items-center my-4 lg:my-8">
+        <div className="flex justify-between items-center my-0 lg:my-7">
           <div className="text-white text-2xl lg:text-4xl font-bold">MIR</div>
           <div className="lg:hidden">
             <button onClick={toggleMenu} className={menuButtonClasses}>
@@ -57,6 +68,13 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
       </div>
+      {showGoTopButton && (
+        <div className="fixed bottom-4 right-4 p-4  rounded-full bg-gray-300">
+          <button onClick={scrollToTop} className="focus:outline-none">
+            <img src="/up-arrow.png" alt="Go Back to Top" className="w-8 h-8 text-white" />
+          </button>
+        </div>
+      )}
     </nav>
   );
 };

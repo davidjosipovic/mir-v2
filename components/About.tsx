@@ -6,8 +6,8 @@ const About: React.FC = () => {
     <section id="about" className="bg-gray-100 py-8 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-1/2">
-            <div className="image-container mx-auto lg:mx-0">
+          <div className="lg:w-1/2 sm:mx-auto">
+            <div className="image-container  mx-auto w-full lg:mx-0">
               <Image
                 src="/about.jpg" // Replace with the correct path to your image
                 alt="Our Team"
@@ -17,7 +17,7 @@ const About: React.FC = () => {
               />
             </div>
           </div>
-          <div className="lg:w-1/2 mt-8 lg:mt-0">
+          <div className="lg:w-1/2 mt-8 lg:mt-0 lg:ml-6">
             <div className="text-container text-center lg:text-left">
               <h1 className="text-xl lg:text-4xl mb-3 font-medium">O NAMA</h1>
               <p className="text-gray-700 text-lg lg:text-2xl font-bold px-4 lg:px-0 leading-tight mb-6">
