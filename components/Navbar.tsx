@@ -8,13 +8,13 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 100) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
 
-      if (window.scrollY > 100) {
+      if (window.scrollY > 300) {
         setShowGoTopButton(true);
       } else {
         setShowGoTopButton(false);
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navbarClasses = `bg-blue-500 p-2 fixed right-0 left-0 transition-all duration-300 ${
-    scrolled ? 'bg-opacity-100' : 'bg-opacity-0'
+    scrolled ? 'bg-opacity-100' : 'bg-opacity-0 lg:mt-8'
   } z-10`;
 
   const scrollToTop = () => {
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={navbarClasses}>
       <div className="container mx-auto">
-        <div className="flex justify-between items-center my-0 lg:my-7">
+        <div className="flex justify-between items-center my-0 lg:my-4">
           <div className="text-white text-2xl lg:text-4xl font-bold">MIR</div>
           <div className="lg:hidden">
             <button onClick={toggleMenu} className={menuButtonClasses}>
@@ -69,9 +69,16 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       {showGoTopButton && (
-        <div className="fixed bottom-4 right-4 p-4  rounded-full bg-gray-300">
-          <button onClick={scrollToTop} className="focus:outline-none">
-            <img src="/up-arrow.png" alt="Go Back to Top" className="w-8 h-8 text-white" />
+        <div className="fixed bottom-4 right-4">
+          <button
+            onClick={scrollToTop}
+            className="focus:outline-none bg-gradient-to-r from-blue-400 to-purple-600 hover:from-blue-600 hover:to-purple-800 rounded-full p-3"
+          >
+            <img
+              src="/up-arrow.png"
+              alt="Go Back to Top"
+              className="w-8 h-8 text-white"
+            />
           </button>
         </div>
       )}

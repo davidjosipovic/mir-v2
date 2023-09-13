@@ -27,7 +27,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
   };
 
   return (
-    <>
+    <div className='my-40'>
       <h1 className="text-2xl lg:text-4xl mb-3 text-center font-medium">PROJEKTI</h1>
       <p className="text-gray-700 text-2xl lg:text-4xl font-bold text-center mb-6">Naši radovi</p>
       <div className="flex flex-col items-center justify-center py-4 md:py-8 mb-8 lg:mb-12">
@@ -70,7 +70,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
         {/* Lightbox */}
         {lightboxImage && <Lightbox imageUrl={lightboxImage} onClose={closeLightbox} />}
       </div>
-    </>
+    </div>
   );
 };
 

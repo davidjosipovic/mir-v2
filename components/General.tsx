@@ -34,13 +34,13 @@ const General: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto py-8 my-20">
+    <div className="container mx-auto py-8 md:my-40">
       <div className="lg:flex">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <div className="text-container mx-4 lg:mx-0">
-            <h1 className="text-xl lg:text-2xl mb-3 text-left font-medium">OPĆENITO</h1>
-            <p className="text-gray-700 text-2xl lg:text-4xl font-bold text-left mb-6">Uvjerite se u kvalitetu naših raznolikih djelatnosti te nas angažirajte za izgradnju svojega objekta.</p>
-            <p className="text-gray-600 text-lg lg:text-xl">
+            <h1 className="text-xl mb-3 text-left font-medium">OPĆENITO</h1>
+            <p className="text-gray-700 text-3xl font-bold text-left mb-6">Uvjerite se u kvalitetu naših raznolikih djelatnosti te nas angažirajte za izgradnju svojega objekta.</p>
+            <p className="text-gray-600 text-xl">
               Stojimo vam na usluzi za sve radove visokogradnje, završnih građevinskih radova i uređenja okoliša.
             </p>
           </div>
