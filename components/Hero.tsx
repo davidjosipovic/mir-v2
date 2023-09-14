@@ -17,13 +17,21 @@ const Hero: React.FC = () => {
   ];
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const textChangeInterval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
     }, 3500);
 
-    return () => clearInterval(interval);
+    const loadingTimer = setTimeout(() => {
+      setLoading(false);
+    }, 500); // Show text after 1 second
+
+    return () => {
+      clearInterval(textChangeInterval);
+      clearTimeout(loadingTimer);
+    };
   }, []);
 
   return (
@@ -35,8 +43,9 @@ const Hero: React.FC = () => {
         height={1080}
         layout="responsive"
       />
-      <div className="absolute inset-0 flex justify-center items-center text-white text-center z-0 bg-opacity-50 bg-black">
-        <h1 className="text-2xl  lg:text-7xl font-bold">
+      <div className={`absolute inset-0 flex justify-center items-center text-white text-center z-0 bg-opacity-50 bg-black `}>
+        <div className={`${loading ? 'opacity-0' : ''}`}>
+          <h1 className='text-2xl lg:text-7xl font-bold '>
           {rotatingTexts.map((text, index) => (
             <span
               key={text}
@@ -51,6 +60,8 @@ const Hero: React.FC = () => {
         <p className="text-l lg:text-2xl mb-8 font-bold mt-36 lg:mt-48">
           MIR GRAĐEVINARSTVO D.O.O.
         </p>
+        </div>
+        
       </div>
       <style jsx>{`
         .text-transition {
@@ -64,6 +75,10 @@ const Hero: React.FC = () => {
 
         .text-transition.active {
           opacity: 1;
+        }
+        
+        .text-transition:nth-child(${currentTextIndex + 1}) {
+          transition-delay: 0.${currentTextIndex + 5}s; /* Adjust the delay time */
         }
       `}</style>
     </div>
