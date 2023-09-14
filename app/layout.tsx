@@ -1,10 +1,12 @@
+'use client'
 import './globals.css'
 import type { Metadata } from 'next'
-import {Montserrat } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { useState, useEffect } from 'react';
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
 })
 
@@ -18,14 +20,34 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for a few seconds (you can replace this with actual data fetching)
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2 seconds (adjust as needed)
+  }, []);
+
   return (
-    
     <html lang="en">
       <body className={montserrat.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
-        </body>
+        
+        {loading ? (
+          // Loading screen with Tailwind CSS classes
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-700 text-white">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-orange-500"></div>
+            <h1 className="ml-2 text-2xl">Dobar dan</h1>
+          </div>
+        ) : (
+          // Content is displayed when loading is complete
+          <>
+            <Navbar />
+            {children}
+            <Footer />
+          </>
+        )}
+      </body>
     </html>
   )
 }

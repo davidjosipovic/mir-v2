@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative" id='pocetna'>
       <Image
         src="/hero.jpg"
         alt="Hero Image"
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         layout="responsive"
       />
       <div className="absolute inset-0 flex justify-center items-center text-white text-center z-0 bg-opacity-50 bg-black">
-        <h1 className="text-4xl  lg:text-7xl font-bold">
+        <h1 className="text-2xl  lg:text-7xl font-bold">
           {rotatingTexts.map((text, index) => (
             <span
               key={text}
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
             </span>
           ))}
         </h1>
-        <p className="text-xl lg:text-2xl mb-8 font-bold mt-36 lg:mt-48">
+        <p className="text-l lg:text-2xl mb-8 font-bold mt-36 lg:mt-48">
           MIR GRAĐEVINARSTVO D.O.O.
         </p>
       </div>

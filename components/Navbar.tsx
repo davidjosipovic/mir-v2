@@ -6,6 +6,15 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showGoTopButton, setShowGoTopButton] = useState(false);
 
+  const navItems = [
+    { label: 'POČETNA', id: 'pocetna' },
+    { label: 'OPĆENITO', id: 'opcenito' },
+    { label: 'USLUGE', id: 'usluge' },
+    { label: 'PROJEKTI', id: 'projekti' },
+    { label: 'O NAMA', id: 'onama' },
+    { label: 'KONTAKT', id: 'kontakt' },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -29,44 +38,56 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const navbarClasses = `bg-blue-500 p-2 fixed right-0 left-0 transition-all duration-300 ${
-    scrolled ? 'bg-opacity-100' : 'bg-opacity-0 lg:mt-8'
+  const navbarClasses = `bg-blue-500 p-2 fixed w-full transition-all duration-300 ${
+    scrolled ? 'lg:bg-opacity-100' : 'lg:bg-opacity-0 lg:mt-8'
   } z-10`;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const menuButtonClasses = 'lg:hidden cursor-pointer text-white text-3xl';
-  const menuClasses = `${menuOpen ? 'block' : 'hidden'} lg:block lg:flex text-lg lg:text-xl space-x-4 font-bold mt-4 lg:mt-0`;
+  const scrollToId = (id:string) => {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      const offset = 100; // Adjust this value as needed
+      const targetPosition = targetElement.offsetTop - offset;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+  };
+
+  const menuButtonClasses = 'lg:hidden cursor-pointer text-white text-3xl ';
+  const menuIconContainerClasses = `lg:hidden flex self-start  z-20 ${
+    menuOpen ? 'lg:hidden' : 'lg:block'
+  } transition-opacity duration-300`;
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const textMarginClasses = `mt-10 lg:mt-0 transition-all duration-300 ${
+  const textMarginClasses = ` ml-4  mt-4 lg:mt-0 transition-all duration-300 ${
     menuOpen ? 'lg:my-1' : ''
   }`;
 
   return (
     <nav className={navbarClasses}>
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center my-0 lg:my-4">
-          <div className="text-white text-2xl lg:text-4xl font-bold">MIR</div>
-          <div className="lg:hidden">
+      <div className="container lg:flex mx-auto">
+        <div className="flex lg:flex-none justify-between items-center my-2 lg:my-4">
+          <div className="text-white text-2xl lg:text-4xl font-bold self-start"><a href="#pocetna">MIR</a></div>
+          
+          <div className={menuIconContainerClasses}>
             <button onClick={toggleMenu} className={menuButtonClasses}>
               &#9776; {/* Hamburger icon */}
             </button>
           </div>
-          <ul className={menuClasses}>
-            <li className={`text-white ${textMarginClasses}`}>POČETNA</li>
-            <li className={`text-white ${textMarginClasses}`}>OPĆENITO</li>
-            <li className={`text-white ${textMarginClasses}`}>USLUGE</li>
-            <li className={`text-white ${textMarginClasses}`}>PROJEKTI</li>
-            <li className={`text-white ${textMarginClasses}`}>O NAMA</li>
-            <li className={`text-white ${textMarginClasses}`}>KONTAKT</li>
-          </ul>
+
         </div>
+        <ul className={`lg:flex lg:mt-6 lg:ml-auto text-lg lg:text-xl float-right space-x-4 font-bold  ${menuOpen ? 'block' : 'hidden relative'}`}>
+            {navItems.map((item, index) => (
+              <li key={index} className={`text-white hover:cursor-pointer ${textMarginClasses}`}>
+                <a  onClick={() => scrollToId(item.id)}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
       </div>
       {showGoTopButton && (
         <div className="fixed bottom-4 right-4">

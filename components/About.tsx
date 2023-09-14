@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className=" py-8 lg:py-16 my-40">
+    <section id="onama" className=" py-8 lg:py-16 my-40">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2 sm:mx-auto">
