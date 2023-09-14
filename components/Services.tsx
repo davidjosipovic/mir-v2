@@ -16,7 +16,7 @@ const Services: React.FC = () => {
             </div>
             <div className="px-6 py-4">
               <h4 className="text-xl font-semibold text-gray-800 mb-2">Adaptacija</h4>
-              <p className="text-gray-700">Adaptacija stanaova i kuća</p>
+              <p className="text-gray-700">Adaptacija stanova i kuća</p>
             </div>
           </div>
 
