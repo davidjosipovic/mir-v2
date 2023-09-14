@@ -34,7 +34,7 @@ const General: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto py-8 md:my-40" id='opcenito'>
+    <div className="container mx-auto py-8 md:my-40 text-orange-400" id='opcenito'>
       <div className="lg:flex">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <div className="text-container mx-4 lg:mx-0">

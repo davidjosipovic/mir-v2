@@ -19,21 +19,21 @@ const About: React.FC = () => {
           </div>
           <div className="lg:w-1/2 mt-8 lg:mt-0 xl:mt-10 lg:ml-6">
             <div className="text-container text-center lg:text-left">
-              <h1 className="text-xl  mb-3 text-center font-medium">O NAMA</h1>
+              <h1 className="text-xl  mb-3 text-center text-orange-400 font-medium">O NAMA</h1>
               <p className="text-gray-700 text-3xl font-bold text-center px-4 lg:px-0 leading-tight mb-6">
                 Sa jasnom i kvalitetnom vizijom naše poduzeće usposobljeno je za
                 izvedbu i izvršavanje svih građevinskih radova te izgradnju
                 obiteljskih kuća te drugih objekata.
               </p>
-              <p className='text-xl lg:leading-relaxed px-4 lg:px-0'>
-                Na području Rovinja te cijele Istarske županije izvršavamo sve
+              <p className='text-xl lg:leading-relaxed px-4 lg:px-0 text-gray-600'>
+                Na području Rovinja izvršavamo sve
                 potrebne građevinske projekte povezane sa građevinskim radovima po
                 principu &quot;ključ u ruke&quot;. Unutar spektra tih radova opremiti ćemo
                 cijelu vašu kuću, stan ili neki drugi objekt od temelja pa do krova.
                 Zidarski radovi, krovopokrivački radovi te svi završni građevinski
                 radovi biti će izvršeni od strane eksperta sa mnoštvom iskustva.
               </p>
-              <ul className="list-disc list-inside mt-4 text-xl lg:leading-relaxed">
+              <ul className="list-disc list-inside mt-4 text-xl lg:leading-relaxed text-gray-600">
                 <li className="text-gray-700">
                   Za izvedbu naših radova koristimo samo najkvalitetnije materijale
                   te najsuvremeniju mehanizaciju, koja nam omogućava izvedbu svih
@@ -45,9 +45,9 @@ const About: React.FC = () => {
                 </li>
               </ul>
               <ul className='flex mt-6 lg:mt-10 px-4 lg:px-0'>
-                <li className='text-5xl font-bold pr-4 '>9.4</li>
+                <li className='lg:text-6xl text-5xl font-bold pr-4 text-orange-400 '>9.4</li>
                 <li className='pr-7 text-base lg:text-lg'>Odlična<br/>ocjena</li>
-                <li className='text-5xl font-bold pr-4 '>24</li>
+                <li className='lg:text-6xl text-5xl font-bold pr-4 text-orange-400'>24</li>
                 <li className='text-base lg:text-lg'>Godina<br/>tradicije</li>
               </ul>
             </div>

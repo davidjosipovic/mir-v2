@@ -28,7 +28,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 
   return (
     <div className='my-40' id='projekti'>
-      <h1 className="text-2xl lg:text-4xl mb-3 text-center font-medium">PROJEKTI</h1>
+      <h1 className="text-xl mb-3 text-center text-orange-400 font-medium">PROJEKTI</h1>
       <p className="text-gray-700 text-2xl lg:text-4xl font-bold text-center mb-6">Naši radovi</p>
       <div className="flex flex-col items-center justify-center py-4 md:py-8 mb-8 lg:mb-12">
         <div className="flex flex-wrap justify-center mb-4">
@@ -38,9 +38,9 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
               type="button"
               className={`${
                 category === currentCategory
-                  ? 'bg-blue-700 text-white hover:bg-blue-800 transition duration-300 '
-                  : 'bg-white text-blue-700 hover:text-white hover:bg-blue-700 transition duration-300 '
-              } border border-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800`}
+                  ? 'bg-orange-400 text-white  transition duration-300 font-bold'
+                  : 'bg-gray-100 text-gray-500 hover:text-white hover:bg-orange-400 transition duration-300 '
+              } border font-bold  rounded-full text-base  px-5 py-2.5 text-center mr-3 mb-3    dark:bg-gray-900 `}
               onClick={() => setCurrentCategory(category)}
             >
               {category}

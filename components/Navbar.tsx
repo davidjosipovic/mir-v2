@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const navbarClasses = `bg-blue-500 p-2 fixed w-full transition-all duration-300 ${
+  const navbarClasses = `  bg-gray-600 p-2 fixed w-full transition-all duration-300 ${
     scrolled ? 'lg:bg-opacity-100' : 'lg:bg-opacity-0 lg:mt-8'
   } z-10`;
 
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
     <nav className={navbarClasses}>
       <div className="container lg:flex mx-auto">
         <div className="flex lg:flex-none justify-between items-center my-2 lg:my-4">
-          <div className="text-white text-2xl lg:text-4xl font-bold self-start"><a href="#pocetna">MIR</a></div>
+          <div className="text-orange-400 text-2xl lg:text-4xl font-bold self-start"><a href="#pocetna">MIR</a></div>
           
           <div className={menuIconContainerClasses}>
             <button onClick={toggleMenu} className={menuButtonClasses}>
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
         </div>
         <ul className={`lg:flex lg:mt-6 lg:ml-auto text-lg lg:text-xl float-right space-x-4 font-bold  ${menuOpen ? 'block' : 'hidden relative'}`}>
             {navItems.map((item, index) => (
-              <li key={index} className={`text-white hover:cursor-pointer ${textMarginClasses}`}>
+              <li key={index} className={`text-white hover:text-orange-400 hover:cursor-pointer ${textMarginClasses}`}>
                 <a  onClick={() => scrollToId(item.id)}>{item.label}</a>
               </li>
             ))}
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
         <div className="fixed bottom-4 right-4">
           <button
             onClick={scrollToTop}
-            className="focus:outline-none bg-gradient-to-r from-blue-400 to-purple-600 hover:from-blue-600 hover:to-purple-800 rounded-full p-3"
+            className="focus:outline-none bg-gradient-to-r from-white to-orange-400 hover:from-white hover:to-gray-500 rounded-full p-3"
           >
             <img
               src="/up-arrow.png"
