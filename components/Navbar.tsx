@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
     }
   };
 
-  const menuButtonClasses = 'lg:hidden cursor-pointer text-white text-3xl ';
+  const menuButtonClasses = 'lg:hidden mr-4 cursor-pointer text-white text-3xl ';
   const menuIconContainerClasses = `lg:hidden flex self-start  z-20 ${
     menuOpen ? 'lg:hidden' : 'lg:block'
   } transition-opacity duration-300`;
@@ -71,8 +71,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className={navbarClasses}>
       <div className="container lg:flex mx-auto">
-        <div className="flex lg:flex-none justify-between items-center my-2 lg:my-4">
-          <div className="text-orange-400 text-2xl lg:text-4xl font-bold self-start"><a href="#pocetna">MIR</a></div>
+        <div className="flex lg:flex-none justify-between items-center my-2 lg:my-2">
+          <div className="text-orange-400 ml-4 text-2xl lg:text-4xl font-bold self-start"><a href="#pocetna">MIR</a></div>
           
           <div className={menuIconContainerClasses}>
             <button onClick={toggleMenu} className={menuButtonClasses}>
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
           </div>
 
         </div>
-        <ul className={`lg:flex lg:mt-6 lg:ml-auto text-lg lg:text-xl float-right space-x-4 font-bold  ${menuOpen ? 'block' : 'hidden relative'}`}>
+        <ul className={`lg:flex lg:mt-4 lg:ml-auto mr-4 text-lg lg:text-xl float-left space-x-4 font-bold  ${menuOpen ? 'block' : 'hidden relative'}`}>
             {navItems.map((item, index) => (
               <li key={index} className={`text-white hover:text-orange-400 hover:cursor-pointer ${textMarginClasses}`}>
                 <a  onClick={() => scrollToId(item.id)}>{item.label}</a>

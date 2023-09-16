@@ -14,6 +14,7 @@ const About: React.FC = () => {
                 width={620} // Adjust the width as needed
                 height={475} // Adjust the height as needed
                 className="rounded-lg shadow-lg"
+                priority={true}
               />
             </div>
           </div>

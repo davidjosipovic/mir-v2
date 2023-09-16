@@ -37,21 +37,22 @@ const Hero: React.FC = () => {
   return (
     <div className="relative" id='pocetna'>
       <Image
-        src="/hero.jpg"
+        src="/hero1.jpg"
         alt="Hero Image"
         width={1920}
         height={1080}
         layout="responsive"
+        priority={true}
       />
       <div className={`absolute inset-0 flex justify-center items-center text-white text-center z-0 bg-opacity-50 bg-black `}>
         <div className={`${loading ? 'opacity-0' : ''}`}>
-          <h1 className='text-2xl lg:text-7xl font-bold '>
+          <h1 className='text-2xl  lg:text-6xl font-bold '>
           {rotatingTexts.map((text, index) => (
             <span
               key={text}
               className={`text-transition ${
                 index === currentTextIndex ? 'active' : ''
-              }`}
+              }`}   
             >
               {text}
             </span>
