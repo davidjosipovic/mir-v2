@@ -82,7 +82,7 @@ const Services: React.FC = () => {
           {/* Card 7 */}
           <div className="bg-white rounded-lg overflow-hidden shadow-lg">
             <div className="rounded-full overflow-hidden mx-auto bg-gray-300 w-32 h-32">
-              <img src="/Usluge/11.jpg" alt="usluga" className="usluga w-full h-full object-cover" />
+              <img src="/Usluge/12.jpg" alt="usluga" className="usluga w-full h-full object-cover" />
             </div>
             <div className="px-6 py-4">
               <h4 className="text-xl font-semibold text-gray-800 mb-2">Krovovi</h4>
