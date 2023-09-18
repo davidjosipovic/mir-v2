@@ -15,8 +15,8 @@ const Lightbox: React.FC<LightboxProps> = ({ imageUrl, onClose }) => {
             src={imageUrl}
             alt="Enlarged Image"
             layout="responsive"
-            width={600} // Adjust the width as needed
-            height={600} // Adjust the height as needed
+            width={500} // Adjust the width as needed
+            height={500} // Adjust the height as needed
             className="w-full h-full rounded-lg"
           />
           <button
