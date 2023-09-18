@@ -7,7 +7,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2 sm:mx-auto">
-            <div className="image-container md:mt-40 xl:mt-0  mx-auto w-full lg:mx-0">
+            <div className="w-0 lg:w-full image-container md:mt-40 xl:mt-12  mx-auto xl:mx-28">
               <Image
                 src="/about.jpg" // Replace with the correct path to your image
                 alt="Our Team"
