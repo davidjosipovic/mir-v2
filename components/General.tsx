@@ -24,8 +24,8 @@ const General: React.FC = () => {
     return images.map((src, index) => (
       <Image
         key={index}
-        width={300}
-        height={300}
+        width={400}
+        height={400}
         className={`rounded-lg mySlides w-full ${index === currentImageIndex ? 'block' : 'hidden'}`}
         src={src}
         alt={`Slide ${index + 1}`}
