@@ -24,11 +24,12 @@ const General: React.FC = () => {
     return images.map((src, index) => (
       <Image
         key={index}
-        width={500}
-        height={200}
+        width={300}
+        height={300}
         className={`rounded-lg mySlides w-full ${index === currentImageIndex ? 'block' : 'hidden'}`}
         src={src}
         alt={`Slide ${index + 1}`}
+        priority
       />
     ));
   };

@@ -11,8 +11,8 @@ const About: React.FC = () => {
               <Image
                 src="/about.jpg" // Replace with the correct path to your image
                 alt="Our Team"
-                width={620} // Adjust the width as needed
-                height={475} // Adjust the height as needed
+                width={300} // Adjust the width as needed
+                height={300} // Adjust the height as needed
                 className="rounded-lg shadow-lg"
                 priority={true}
               />
