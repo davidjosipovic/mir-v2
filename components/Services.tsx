@@ -20,7 +20,6 @@ const Services: React.FC = () => {
             </div>
           </div>
 
-
           {/* Card 2 */}
           <div className="bg-white rounded-lg overflow-hidden shadow-lg">
             <div className="rounded-full overflow-hidden mx-auto bg-gray-300 w-32 h-32">
@@ -31,7 +30,6 @@ const Services: React.FC = () => {
               <p className="text-gray-700 text-xl">Izgradnja betona, ugradnja armaturnog željeza, montiranje otplate...</p>
             </div>
           </div>
-
 
           {/* Card 3 */}
           <div className="bg-white rounded-lg overflow-hidden shadow-lg">
@@ -54,8 +52,6 @@ const Services: React.FC = () => {
               <p className="text-gray-700 text-xl">Sanacija stare kuće, izrada troškovnika</p>
             </div>
           </div>
-
-          
 
           {/* Card 5 */}
           <div className="bg-white rounded-lg overflow-hidden shadow-lg">
